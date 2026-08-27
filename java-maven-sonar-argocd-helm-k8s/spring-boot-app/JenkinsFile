@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh 'starting checkout'
+            echo 'starting checkout'
            git branch: 'main', url: 'https://github.com/Akasheral/Jenkins-Zero-To-Hero.git'
         sh '''
               echo "=========== CURRENT DIRECTORY ==========="
