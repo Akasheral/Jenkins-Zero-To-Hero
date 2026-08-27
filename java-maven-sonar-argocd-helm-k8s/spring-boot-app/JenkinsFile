@@ -16,6 +16,7 @@ pipeline {
               echo "============FILES========================"
               ls -la
               echo "=============GIT STATUS++++++++++++++++++"
+              git config --global --add safe.directory /var/lib/jenkins/workspace/pipeline
               git status
               echo "+++++++++++++GIT REMOTE=================="
               git remote -v
