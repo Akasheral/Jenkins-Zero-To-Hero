@@ -8,8 +8,18 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh 'echo passed'
+        sh 'starting checkout'
            git branch: 'main', url: 'https://github.com/Akasheral/Jenkins-Zero-To-Hero.git'
+        sh '''
+              echo "=========== CURRENT DIRECTORY ==========="
+              pwd
+              echo "============FILES========================"
+              ls -la
+              echo "=============GIT STATUS++++++++++++++++++"
+              git status
+              echo "+++++++++++++GIT REMOTE=================="
+              git remote -v
+            '''
       }
     }
     stage('Build and Test') {
